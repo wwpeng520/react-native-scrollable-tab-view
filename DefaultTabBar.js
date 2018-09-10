@@ -1,5 +1,5 @@
 const React = require('react');
-const { ViewPropTypes } = ReactNative = require('react-native');
+const { ViewPropTypes, PixelRatio } = ReactNative = require('react-native');
 const PropTypes = require('prop-types');
 const createReactClass = require('create-react-class');
 const {
@@ -102,10 +102,12 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   tabs: {
-    height: 50,
+    // height: 50,
+    height: 40,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    borderWidth: 1,
+    // borderWidth: 1,
+    borderWidth: 1 / PixelRatio.get(),
     borderTopWidth: 0,
     borderLeftWidth: 0,
     borderRightWidth: 0,

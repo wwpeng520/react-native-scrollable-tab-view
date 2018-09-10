@@ -147,6 +147,9 @@ const ScrollableTabBar = createReactClass({
 
   measureTab(page, event) {
     const { x, width, height, } = event.nativeEvent.layout;
+    if( this.props.activeTab == page ) { 
+      this.state._widthTabUnderline.setValue(width); this.state._leftTabUnderline.setValue(x); 
+    }
     this._tabsMeasurements[page] = {left: x, right: x + width, width, height, };
     this.updateView({value: this.props.scrollValue._value, });
   },
@@ -220,14 +223,14 @@ module.exports = ScrollableTabBar;
 
 const styles = StyleSheet.create({
   tab: {
-    height: 49,
+    height: 39,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   container: {
-    height: 50,
+    height: 40,
     borderWidth: 1,
     borderTopWidth: 0,
     borderLeftWidth: 0,

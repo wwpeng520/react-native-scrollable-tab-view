@@ -18,6 +18,9 @@ const TimerMixin = require('react-timer-mixin');
 const SceneComponent = require('./SceneComponent');
 const DefaultTabBar = require('./DefaultTabBar');
 const ScrollableTabBar = require('./ScrollableTabBar');
+const TabBarButtonGroup = require('./TabBarButtonGroup');
+const TabBarFilled = require('./TabBarFilled');
+const TabBarMid = require('./TabBarMid');
 
 const AnimatedViewPagerAndroid = Platform.OS === 'android' ?
   Animated.createAnimatedComponent(ViewPagerAndroid) :
@@ -28,6 +31,9 @@ const ScrollableTabView = createReactClass({
   statics: {
     DefaultTabBar,
     ScrollableTabBar,
+    TabBarButtonGroup,
+    TabBarFilled,
+    TabBarMid,
   },
   scrollOnMountCalled: false,
 
