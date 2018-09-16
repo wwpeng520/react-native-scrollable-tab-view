@@ -53,8 +53,8 @@ export default class TabBarMid extends React.PureComponent {
       this.setState((prevState, props) => ({
         prevLeft: prevState.nextLeft,
         prevWidth: prevState.nextWidth,
-        nextLeft: this.tabbarInfos[activeTab].left,
-        nextWidth: this.tabbarInfos[activeTab].width,
+        nextLeft: _.get(this.tabbarInfos[activeTab], 'left') || 0,
+        nextWidth: _.get(this.tabbarInfos[activeTab], 'width') || 0,
       }));
       this.setState({
         currentIndex: activeTab
@@ -72,8 +72,8 @@ export default class TabBarMid extends React.PureComponent {
       this.setState((prevState, props) => ({
         prevLeft: prevState.nextLeft,
         prevWidth: prevState.nextWidth,
-        nextLeft: this.tabbarInfos[activeTab].left,
-        nextWidth: this.tabbarInfos[activeTab].width,
+        nextLeft: _.get(this.tabbarInfos[activeTab], 'left') || 0,
+        nextWidth: _.get(this.tabbarInfos[activeTab], 'width') || 0,
       }));
       this.setState({
         currentIndex: activeTab
@@ -127,8 +127,8 @@ export default class TabBarMid extends React.PureComponent {
               this.setState((prevState, props) => ({
                 prevLeft: prevState.nextLeft,
                 prevWidth: prevState.nextWidth,
-                nextLeft: this.tabbarInfos[index].left,
-                nextWidth: this.tabbarInfos[index].width,
+                nextLeft: _.get(this.tabbarInfos[index], 'left') || 0,
+                nextWidth: _.get(this.tabbarInfos[index], 'width') || 0,
                 currentIndex: index,
               }));
             },
